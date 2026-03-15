@@ -1,0 +1,132 @@
+/**
+ * Timer Component Styles
+ * Uses CSS variables from theme system
+ */
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Display */
+.timer__display {
+  font-size: 36px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-fg);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 16px 32px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.timer__display--compact {
+  font-size: 24px;
+  padding: 8px 16px;
+  min-width: 120px;
+}
+
+/* Controls */
+.timer__controls {
+  display: flex;
+  gap: 8px;
+}
+
+.timer__btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 8px 16px;
+  transition: all 0.15s ease;
+}
+
+.timer__btn--primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.timer__btn--primary:hover {
+  opacity: 0.85;
+}
+
+.timer__btn--secondary {
+  background-color: var(--color-bg-alt);
+  color: var(--color-fg);
+  border: 1px solid var(--color-border);
+}
+
+.timer__btn--secondary:hover:not(:disabled) {
+  border-color: var(--color-accent);
+}
+
+.timer__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Laps */
+.timer__laps {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  width: 100%;
+  max-width: 280px;
+}
+
+.timer__lap {
+  font-size: 13px;
+  color: var(--color-fg);
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--color-border);
+  font-variant-numeric: tabular-nums;
+}
+
+.timer__lap:last-child {
+  border-bottom: none;
+}
+
+/* Compact variant */
+[data-variant='compact'] .timer__display {
+  font-size: 24px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+[data-variant='compact'] .timer__display--compact {
+  font-size: 18px;
+  padding: 6px 12px;
+}
+
+[data-variant='compact'] .timer__btn {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+/* Modern variant */
+[data-variant='modern'] .timer__display {
+  font-size: 42px;
+  font-weight: 700;
+  padding: 20px 40px;
+  border-radius: 12px;
+}
+
+[data-variant='modern'] .timer__display--compact {
+  font-size: 28px;
+  padding: 12px 24px;
+}
+
+[data-variant='modern'] .timer__btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
