@@ -18,6 +18,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm build || true
-      - run: npm publish --access public --ignore-scripts
+      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc && npm publish --access public --ignore-scripts
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
